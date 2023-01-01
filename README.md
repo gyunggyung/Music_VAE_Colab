@@ -1,12 +1,5 @@
 # Music_VAE_Colab
-
-* gen500은 500 step동안 학습한 model이 생성한 폴더입니다. gen2742는 2742 step동안 학습을 진행했습니다. gen2742_2는 똑같은 model로 한 번 더 생성한 결과입니다.
-
-https://github.com/magenta/magenta/blob/77ed668af96edea7c993d38973b9da342bd31e82/magenta/models/music_vae/base_model.py
-https://github.com/magenta/magenta/blob/77ed668af96edea7c993d38973b9da342bd31e82/magenta/models/music_vae/lstm_models.py
-https://github.com/magenta/magenta/blob/77ed668af96edea7c993d38973b9da342bd31e82/magenta/contrib/rnn.py
-https://github.com/magenta/magenta/blob/77ed668af96edea7c993d38973b9da342bd31e82/magenta/models/music_vae/lstm_utils.py
-에서 모델을 자세히 볼 수 있습니다. 아래 내용 중, 혹시 틀린 부분이 있을 경우, 알려주시면 감사하겠습니다! 핵심만 쓰기 위해, 많은 중간과정을 생략하고 있습니다.
+아래 내용 중, 혹시 틀린 부분이 있을 경우, 알려주시면 감사하겠습니다! 핵심만 쓰기 위해, 많은 중간과정을 생략하고 있습니다.
 
 ## ENCODER
 ENCODER는 논문과 같이 latent distribution parameters(μ and σ)를 만드는데 필요한, BiLSTM의 final state vectors를 얻습니다.
@@ -21,7 +14,11 @@ DECODER는 논문과 같이 HIERARCHICAL DECODER를 사용합니다. 입력 sequ
 이외에 사항들은 VAE 생성 방식과 유사합니다.
 
 ## Some code
-
+https://github.com/magenta/magenta/blob/77ed668af96edea7c993d38973b9da342bd31e82/magenta/models/music_vae/base_model.py
+https://github.com/magenta/magenta/blob/77ed668af96edea7c993d38973b9da342bd31e82/magenta/models/music_vae/lstm_models.py
+https://github.com/magenta/magenta/blob/77ed668af96edea7c993d38973b9da342bd31e82/magenta/contrib/rnn.py
+https://github.com/magenta/magenta/blob/77ed668af96edea7c993d38973b9da342bd31e82/magenta/models/music_vae/lstm_utils.py
+에서 모델을 자세히 볼 수 있습니다. 
 ```
     Encodes input sequences into a precursors for latent code `z`.
     Args:
@@ -75,6 +72,11 @@ DECODER는 논문과 같이 HIERARCHICAL DECODER를 사용합니다. 입력 sequ
         lengths.
     """
 ```
+
+## Result
+- [gen500](https://github.com/gyunggyung/Music_VAE_Colab/tree/main/gen500)은 500 step동안 학습한 model로, 생성한 결과를 저장한 폴더입니다. 
+- [gen2742](https://github.com/gyunggyung/Music_VAE_Colab/tree/main/gen2742)는 2742 step동안 학습을 진행했습니다. 
+- [gen2742_2](https://github.com/gyunggyung/Music_VAE_Colab/tree/main/gen2742)는 똑같은 model로 한 번 더 생성한 결과입니다.
 
 ## Reference
 - A Hierarchical Latent Vector Model for Learning Long-Term Structure in Music https://arxiv.org/pdf/1803.05428.pdf
